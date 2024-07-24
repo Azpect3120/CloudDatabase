@@ -1,17 +1,14 @@
 #!/usr/bin/env bash
 
 # Ensure details were provided
-if [ $# -ne 2 ]; then
-  echo "Usage: $0 <username> <password>"
+if [ $# -ne 3 ]; then
+  echo "Usage: $0 <username> <password> <postgres_password>"
   exit 1
 fi
 
 USERNAME=$1
 PASSWORD=$2
-
-# Hide this somewhere
-# This is the postgres users password
-export PGPASSWORD=""
+export PGPASSWORD=$3
 
 # Create the new user/role
 psql -U postgres -c "CREATE USER $USERNAME WITH PASSWORD '$PASSWORD';"

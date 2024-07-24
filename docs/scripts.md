@@ -11,11 +11,12 @@
 This script creates a new PostgreSQL user with the specified username and password, 
 creates a database for the user, and grants all necessary privileges. The `postgres`
 user is required to run this script as well as `sudo` privileges. The password for 
-the `postgres` user is required to run this script and should be placed in the script.
+the `postgres` user is required to run this script and should be provided in the 
+3rd argument.
 
 ### Usage
 ```bash
-./scripts/create_user.sh <username> <password>
+./scripts/create_user.sh <username> <password> <postgres_password>
 ```
 
 ### Exit Codes
@@ -37,11 +38,12 @@ the `postgres` user is required to run this script and should be placed in the s
 This script deletes a PostgreSQL user with the specified username, deletes the database
 associated with the user, and revokes their permissions on the schema. The `postgres`
 user is required to run this script as well as `sudo` privileges. The password for 
-the `postgres` user is required to run this script and should be placed in the script.
+the `postgres` user is required to run this script and should be provided in the
+2nd argument.
 
 ### Usage
 ```bash
-./scripts/delete_user.sh <username>
+./scripts/delete_user.sh <username> <postgres_password>
 ```
 
 ### Exit Codes

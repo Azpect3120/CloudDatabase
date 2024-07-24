@@ -2,6 +2,10 @@
 
 With ElephantSQL going out of business, I need something new and most importantly, free.
 
+As of now, a rework is required, schemas are important and messing me up.
+
+Check out this [link](https://www.postgresqltutorial.com/postgresql-administration/postgresql-schema/) for more information.
+
 
 ## My Take
 

@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 
 # Check if the user exists
-if [ -z "$1" ]; then
-    echo "Usage: $0 <username>"
+if [ -z "$2" ]; then
+    echo "Usage: $0 <username> <postgres_password>"
     exit 1
 fi
 
 USERNAME=$1
-
-# Hide this somewhere
-# This is the postgres users password
-export PGPASSWORD=""
+export PGPASSWORD=$2
 
 # Delete owned tables
 # This might not be required
@@ -46,4 +43,4 @@ if [ $? -ne 0 ]; then
   exit 2
 fi
 
-unset PGPASSWORD
+# unset PGPASSWORD
